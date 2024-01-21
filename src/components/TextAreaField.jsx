@@ -24,13 +24,29 @@ function TextAreaInput({ name, textValue, onInput }) {
   );
 }
 
-function TextAreaField({ status, name }) {
+function TextAreaField({
+  status,
+  name,
+  dataObj,
+  dataMap,
+  dataObjProperty,
+  handleDataMapUpdate,
+}) {
   const [textValue, setTextValue] = useState("");
+  function updateInputValue(value) {
+    setTextValue(value);
+    if (dataObj) {
+      const newDataObj = { ...dataObj, [dataObjProperty]: value };
+      const newMap = new Map([...dataMap]);
+      newMap.set(newDataObj.id, newDataObj);
+      handleDataMapUpdate(newMap);
+    }
+  }
   return status === "edit" ? (
     <TextAreaInput
       name={name}
       textValue={textValue}
-      onInput={setTextValue}
+      onInput={updateInputValue}
     ></TextAreaInput>
   ) : (
     <TextAreaInfo name={name} textValue={textValue}></TextAreaInfo>

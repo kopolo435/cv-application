@@ -34,13 +34,29 @@ function DateInfo({ name, dateValue }) {
   );
 }
 
-function DateField({ status, name }) {
+function DateField({
+  status,
+  name,
+  dataObj,
+  dataMap,
+  dataObjProperty,
+  handleDataMapUpdate,
+}) {
   const [dateValue, setDateValue] = useState("");
+  function updateInputValue(value) {
+    setDateValue(value);
+    if (dataObj) {
+      const newDataObj = { ...dataObj, [dataObjProperty]: value };
+      const newMap = new Map([...dataMap]);
+      newMap.set(newDataObj.id, newDataObj);
+      handleDataMapUpdate(newMap);
+    }
+  }
   return status === "edit" ? (
     <DateInput
       name={name}
       dateValue={dateValue}
-      onInput={setDateValue}
+      onInput={updateInputValue}
     ></DateInput>
   ) : (
     <DateInfo name={name} dateValue={dateValue}></DateInfo>
