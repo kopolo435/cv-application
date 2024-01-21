@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function Input({ type, inputName, fieldValue, onInput }) {
+function Input({ type, inputName, fieldValue, onInput, label }) {
   return (
     <label>
-      {inputName}
+      {label}
       <input
         type={type}
         value={fieldValue}
@@ -23,15 +23,36 @@ function Info({ type, infoName, value }) {
   );
 }
 
-function Field({ type, name, status }) {
+function Field({
+  type,
+  label,
+  name,
+  status,
+  dataObj,
+  dataMap,
+  dataObjProperty,
+  handleDataMapUpdate,
+}) {
   const [fieldValue, setFieldValue] = useState("");
+
+  function updateInputValue(text) {
+    setFieldValue(text);
+    if (dataObj) {
+      const newDataObj = { ...dataObj, [dataObjProperty]: text };
+      const newMap = new Map([...dataMap]);
+      newMap.set(newDataObj.id, newDataObj);
+      handleDataMapUpdate(newMap);
+    }
+  }
+
   return status === "edit" ? (
     <Input
       type={type}
+      label={label}
       fieldValue={fieldValue}
-      inputName={name}
+      inputName={dataObj ? `${name}${dataObj.id}` : name}
       value={fieldValue}
-      onInput={setFieldValue}
+      onInput={updateInputValue}
     ></Input>
   ) : (
     <Info type={type} infoName={name} value={fieldValue}></Info>
