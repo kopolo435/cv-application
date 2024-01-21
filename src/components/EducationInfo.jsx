@@ -8,6 +8,12 @@ function EducationField({
   educationData,
   handleDataMapUpdate,
 }) {
+  function deleteEducationField() {
+    const newMap = new Map([...educationData]);
+    newMap.delete(dataObj.id);
+    handleDataMapUpdate(newMap);
+  }
+
   return (
     <div className="educationField">
       <Field
@@ -38,6 +44,13 @@ function EducationField({
         dataObjProperty={"date"}
         handleDataMapUpdate={handleDataMapUpdate}
       ></DateField>
+      {status === "edit" && (
+        <Button
+          handleClick={deleteEducationField}
+          type={"button"}
+          content={"Borrar"}
+        ></Button>
+      )}
     </div>
   );
 }
@@ -53,7 +66,7 @@ function EducationInfo({ status }) {
   }
   function addEducationField() {
     const newDataObj = {
-      id: educationData.size,
+      id: `${crypto.randomUUID()}`,
       school: "",
       title: "",
       date: "",
