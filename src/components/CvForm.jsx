@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PersonalInfo } from "./InputComponents";
+import PersonalInfo from "./PersonalInfo";
 import EducationInfo from "./EducationInfo";
 import JobExperience from "./JobExperience";
 
