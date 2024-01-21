@@ -1,26 +1,40 @@
-function Input({ type, inputName }) {
+import { useState } from "react";
+
+function Input({ type, inputName, fieldValue, onInput }) {
   return (
     <label>
       {inputName}
-      <input type={type} name={inputName} />
+      <input
+        type={type}
+        value={fieldValue}
+        name={inputName}
+        onChange={(e) => onInput(e.target.value)}
+      />
     </label>
   );
 }
 
-function Info({ type, infoName }) {
+function Info({ type, infoName, value }) {
   return (
     <div>
       <p>{infoName}</p>
-      <p>Hola</p>
+      <p>{value}</p>
     </div>
   );
 }
 
 function Field({ type, name, status }) {
+  const [fieldValue, setFieldValue] = useState("");
   return status === "edit" ? (
-    <Input type={type} inputName={name}></Input>
+    <Input
+      type={type}
+      fieldValue={fieldValue}
+      inputName={name}
+      value={fieldValue}
+      onInput={setFieldValue}
+    ></Input>
   ) : (
-    <Info type={type} infoName={name}></Info>
+    <Info type={type} infoName={name} value={fieldValue}></Info>
   );
 }
 
