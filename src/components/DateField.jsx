@@ -6,8 +6,10 @@ function formatDateToString(dateValue) {
 
 function DateInput({ name, dateValue, onInput }) {
   const dateString = formatDateToString(dateValue);
+
   function setDateObj(dateString) {
-    const dateObj = new Date(dateString);
+    const [year, month, day] = dateString.split("-").map(Number);
+    const dateObj = new Date(year, month - 1, day);
     onInput(dateObj);
   }
 
