@@ -43,7 +43,9 @@ function EducationField({
 }
 
 function EducationInfo({ status }) {
-  const [educationData, setEducationData] = useState(new Map());
+  const initialMap = new Map();
+  initialMap.set("0", { id: "0", school: "", title: "", date: "" });
+  const [educationData, setEducationData] = useState(initialMap);
 
   function getEducationArray() {
     const array = Array.from(educationData, ([name, value]) => value);
@@ -63,24 +65,15 @@ function EducationInfo({ status }) {
   const educationDataArray = getEducationArray();
   return (
     <div className="inputContainer">
-      {educationData.size === 0 ? (
+      {educationDataArray.map((data) => (
         <EducationField
           status={status}
-          dataObj={{ id: "0", school: "", title: "", date: "" }}
+          dataObj={data}
+          key={data.id}
           educationData={educationData}
           handleDataMapUpdate={setEducationData}
         ></EducationField>
-      ) : (
-        educationDataArray.map((data) => (
-          <EducationField
-            status={status}
-            dataObj={data}
-            key={data.id}
-            educationData={educationData}
-            handleDataMapUpdate={setEducationData}
-          ></EducationField>
-        ))
-      )}
+      ))}
 
       {status === "edit" && (
         <Button
