@@ -1,10 +1,10 @@
 import { useState } from "react";
-import CvForm from "./components/CvForm";
+import MainDisplay from "./components/MainDisplay";
 import "./styles/main.css";
 function App() {
   return (
     <>
-      <CvForm></CvForm>
+      <MainDisplay></MainDisplay>
     </>
   );
 }

@@ -4,45 +4,6 @@ import EducationInfo from "./EducationInfo";
 import JobExperience from "./JobExperience";
 import SkillInfo from "./SkillsInfo";
 
-function getJobInitialMap() {
-  const JobInitialMap = new Map();
-  JobInitialMap.set("0", {
-    id: "0",
-    company: "",
-    jobTitle: "",
-    description: "",
-    startDate: "",
-    endDate: "",
-  });
-  return JobInitialMap;
-}
-
-function getEducationInitialMap() {
-  const educationInitialMap = new Map();
-  educationInitialMap.set("0", { id: "0", school: "", title: "", date: "" });
-  return educationInitialMap;
-}
-
-function getPersonalInfoMap() {
-  const personalInfoInitialMap = new Map();
-  personalInfoInitialMap.set("0", {
-    id: "0",
-    nombre: "",
-    correo: "",
-    telefono: "",
-  });
-  return personalInfoInitialMap;
-}
-
-function getSkillInfoMap() {
-  const InitialMap = new Map();
-  InitialMap.set("0", {
-    id: "0",
-    skill: "",
-  });
-  return InitialMap;
-}
-
 function StatusButton({ handleClick, value, btnClass, content }) {
   return (
     <button
@@ -54,13 +15,19 @@ function StatusButton({ handleClick, value, btnClass, content }) {
     </button>
   );
 }
-function CvForm() {
-  const [status, setStatus] = useState("");
-  const [educationData, setEducationData] = useState(getEducationInitialMap());
-  const [jobData, setJobData] = useState(getJobInitialMap());
-  const [personalData, setPersonalData] = useState(getPersonalInfoMap);
-  const [skillData, setSkillData] = useState(getSkillInfoMap());
 
+function CvForm({
+  status,
+  setStatus,
+  educationData,
+  setEducationData,
+  jobData,
+  setJobData,
+  personalData,
+  setPersonalData,
+  skillData,
+  setSkillData,
+}) {
   return (
     <form>
       <fieldset>
