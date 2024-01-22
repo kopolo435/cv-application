@@ -22,6 +22,17 @@ function getEducationInitialMap() {
   return educationInitialMap;
 }
 
+function getPersonalInfoMap() {
+  const educationInitialMap = new Map();
+  educationInitialMap.set("0", {
+    id: "0",
+    nombre: "",
+    correo: "",
+    telefono: "",
+  });
+  return educationInitialMap;
+}
+
 function StatusButton({ handleClick, value, btnClass, content }) {
   return (
     <button
@@ -37,12 +48,17 @@ function CvForm() {
   const [status, setStatus] = useState("");
   const [educationData, setEducationData] = useState(getEducationInitialMap());
   const [jobData, setJobData] = useState(getJobInitialMap());
+  const [personalData, setPersonalData] = useState(getPersonalInfoMap);
 
   return (
     <form>
       <fieldset>
         <legend>Informacion Personal</legend>
-        <PersonalInfo status={status}></PersonalInfo>
+        <PersonalInfo
+          status={status}
+          personalData={personalData}
+          setPersonalData={setPersonalData}
+        ></PersonalInfo>
       </fieldset>
       <fieldset>
         <legend>Estudios realizados</legend>
