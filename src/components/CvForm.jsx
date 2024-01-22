@@ -2,6 +2,7 @@ import { useState } from "react";
 import PersonalInfo from "./PersonalInfo";
 import EducationInfo from "./EducationInfo";
 import JobExperience from "./JobExperience";
+import SkillInfo from "./SkillsInfo";
 
 function getJobInitialMap() {
   const JobInitialMap = new Map();
@@ -23,14 +24,23 @@ function getEducationInitialMap() {
 }
 
 function getPersonalInfoMap() {
-  const educationInitialMap = new Map();
-  educationInitialMap.set("0", {
+  const personalInfoInitialMap = new Map();
+  personalInfoInitialMap.set("0", {
     id: "0",
     nombre: "",
     correo: "",
     telefono: "",
   });
-  return educationInitialMap;
+  return personalInfoInitialMap;
+}
+
+function getSkillInfoMap() {
+  const InitialMap = new Map();
+  InitialMap.set("0", {
+    id: "0",
+    skill: "",
+  });
+  return InitialMap;
 }
 
 function StatusButton({ handleClick, value, btnClass, content }) {
@@ -49,6 +59,7 @@ function CvForm() {
   const [educationData, setEducationData] = useState(getEducationInitialMap());
   const [jobData, setJobData] = useState(getJobInitialMap());
   const [personalData, setPersonalData] = useState(getPersonalInfoMap);
+  const [skillData, setSkillData] = useState(getSkillInfoMap());
 
   return (
     <form>
@@ -75,6 +86,14 @@ function CvForm() {
           jobData={jobData}
           setJobData={setJobData}
         ></JobExperience>
+      </fieldset>
+      <fieldset>
+        <legend>Habilidades</legend>
+        <SkillInfo
+          status={status}
+          skillData={skillData}
+          setSkillData={setSkillData}
+        ></SkillInfo>
       </fieldset>
       <StatusButton
         btnClass={"secondaryBtn"}
