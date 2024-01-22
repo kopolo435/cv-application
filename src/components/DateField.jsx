@@ -4,7 +4,7 @@ function formatDateToString(dateValue) {
   return dateValue ? dateValue.toISOString().split("T")[0] : "";
 }
 
-function DateInput({ name, dateValue, onInput }) {
+function DateInput({ name, index, dateValue, onInput }) {
   const dateString = formatDateToString(dateValue);
 
   function setDateObj(dateString) {
@@ -20,7 +20,7 @@ function DateInput({ name, dateValue, onInput }) {
         type="date"
         value={dateString}
         onChange={(e) => setDateObj(e.target.value)}
-        name={name}
+        name={index > -1 ? `${name}[${index}]` : name}
       />
     </label>
   );
@@ -39,6 +39,7 @@ function DateInfo({ name, dateValue }) {
 function DateField({
   status,
   name,
+  index,
   dataObj,
   dataMap,
   dataObjProperty,
@@ -57,6 +58,7 @@ function DateField({
   return status === "edit" ? (
     <DateInput
       name={name}
+      index={index}
       dateValue={dateValue}
       onInput={updateInputValue}
     ></DateInput>

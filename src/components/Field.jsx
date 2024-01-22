@@ -27,6 +27,7 @@ function Field({
   type,
   label,
   name,
+  index,
   status,
   dataObj,
   dataMap,
@@ -50,7 +51,7 @@ function Field({
       type={type}
       label={label}
       fieldValue={fieldValue}
-      inputName={dataObj ? `${name}${dataObj.id}` : name}
+      inputName={index > -1 ? `${name}[${index}]` : name}
       value={fieldValue}
       onInput={updateInputValue}
     ></Input>

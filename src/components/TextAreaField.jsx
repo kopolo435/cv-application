@@ -9,12 +9,12 @@ function TextAreaInfo({ name, textValue }) {
   );
 }
 
-function TextAreaInput({ name, textValue, onInput }) {
+function TextAreaInput({ name, index, textValue, onInput }) {
   return (
     <label>
       {name}
       <textarea
-        name={name}
+        name={index > -1 ? `${name}[${index}]` : name}
         cols="30"
         rows="5"
         value={textValue}
@@ -27,6 +27,7 @@ function TextAreaInput({ name, textValue, onInput }) {
 function TextAreaField({
   status,
   name,
+  index,
   dataObj,
   dataMap,
   dataObjProperty,
@@ -45,6 +46,7 @@ function TextAreaField({
   return status === "edit" ? (
     <TextAreaInput
       name={name}
+      index={index}
       textValue={textValue}
       onInput={updateInputValue}
     ></TextAreaInput>

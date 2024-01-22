@@ -3,7 +3,13 @@ import Field from "./Field";
 import DateField from "./DateField";
 import Button from "./Button";
 import TextAreaField from "./TextAreaField";
-function JobField({ status, dataObj = null, jobData, handleDataMapUpdate }) {
+function JobField({
+  status,
+  dataObj = null,
+  index,
+  jobData,
+  handleDataMapUpdate,
+}) {
   function deleteJobField() {
     const newMap = new Map([...jobData]);
     newMap.delete(dataObj.id);
@@ -16,6 +22,7 @@ function JobField({ status, dataObj = null, jobData, handleDataMapUpdate }) {
         label={"Compañia"}
         status={status}
         name={"company"}
+        index={index}
         dataObj={dataObj}
         dataMap={jobData}
         dataObjProperty={"company"}
@@ -26,6 +33,7 @@ function JobField({ status, dataObj = null, jobData, handleDataMapUpdate }) {
         label={"Posicion"}
         status={status}
         name={"jobTitle"}
+        index={index}
         dataObj={dataObj}
         dataMap={jobData}
         dataObjProperty={"jobTitle"}
@@ -34,6 +42,8 @@ function JobField({ status, dataObj = null, jobData, handleDataMapUpdate }) {
       <TextAreaField
         status={status}
         dataObj={dataObj}
+        name={"experiencia"}
+        index={index}
         dataMap={jobData}
         dataObjProperty={"description"}
         handleDataMapUpdate={handleDataMapUpdate}
@@ -41,6 +51,7 @@ function JobField({ status, dataObj = null, jobData, handleDataMapUpdate }) {
       <DateField
         status={status}
         name={"startDate"}
+        index={index}
         dataObj={dataObj}
         dataMap={jobData}
         dataObjProperty={"startDate"}
@@ -49,6 +60,7 @@ function JobField({ status, dataObj = null, jobData, handleDataMapUpdate }) {
       <DateField
         status={status}
         name={"endDate"}
+        index={index}
         dataObj={dataObj}
         dataMap={jobData}
         dataObjProperty={"endDate"}
@@ -86,10 +98,11 @@ function JobExperience({ status, jobData, setJobData }) {
   const jobDataArray = getJobArray();
   return (
     <div>
-      {jobDataArray.map((data) => (
+      {jobDataArray.map((data, index) => (
         <JobField
           status={status}
           dataObj={data}
+          index={index}
           key={data.id}
           jobData={jobData}
           handleDataMapUpdate={setJobData}

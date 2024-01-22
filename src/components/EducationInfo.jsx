@@ -4,6 +4,7 @@ import Button from "./Button";
 import { useState } from "react";
 function EducationField({
   status,
+  index,
   dataObj = null,
   educationData,
   handleDataMapUpdate,
@@ -20,6 +21,7 @@ function EducationField({
         type="text"
         label={"School name"}
         name="schoolName"
+        index={index}
         status={status}
         dataObj={dataObj}
         dataMap={educationData}
@@ -30,6 +32,7 @@ function EducationField({
         type="text"
         label={"Title"}
         name="title"
+        index={index}
         status={status}
         dataObj={dataObj}
         dataMap={educationData}
@@ -39,6 +42,7 @@ function EducationField({
       <DateField
         status={status}
         name={"EstudioCompletado"}
+        index={index}
         dataObj={dataObj}
         dataMap={educationData}
         dataObjProperty={"date"}
@@ -74,9 +78,10 @@ function EducationInfo({ status, educationData, setEducationData }) {
   const educationDataArray = getEducationArray();
   return (
     <div className="inputContainer">
-      {educationDataArray.map((data) => (
+      {educationDataArray.map((data, index) => (
         <EducationField
           status={status}
+          index={index}
           dataObj={data}
           key={data.id}
           educationData={educationData}
