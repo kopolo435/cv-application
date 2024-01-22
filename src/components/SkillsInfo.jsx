@@ -1,11 +1,18 @@
 import Field from "./Field";
 import Button from "./Button";
-function SkillField({ status, skillData, dataObj, handleDataMapUpdate }) {
+function SkillField({
+  status,
+  index,
+  skillData,
+  dataObj,
+  handleDataMapUpdate,
+}) {
   return (
     <Field
       type={"text"}
       label={"Habilidad"}
       name={"habilidad"}
+      index={index}
       status={status}
       dataMap={skillData}
       dataObj={dataObj}
@@ -32,10 +39,11 @@ function SkillInfo({ status, skillData, setSkillData }) {
   const skillDataArray = getSkillArray();
   return (
     <div className="skillInfo">
-      {skillDataArray.map((data) => (
+      {skillDataArray.map((data, index) => (
         <SkillField
           status={status}
           dataObj={data}
+          index={index}
           key={data.id}
           skillData={skillData}
           handleDataMapUpdate={setSkillData}
