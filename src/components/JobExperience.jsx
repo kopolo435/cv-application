@@ -65,18 +65,7 @@ function JobField({ status, dataObj = null, jobData, handleDataMapUpdate }) {
   );
 }
 
-function JobExperience({ status }) {
-  const initialMap = new Map();
-  initialMap.set("0", {
-    id: "0",
-    company: "",
-    jobTitle: "",
-    description: "",
-    startDate: "",
-    endDate: "",
-  });
-  const [jobData, setJobData] = useState(initialMap);
-
+function JobExperience({ status, jobData, setJobData }) {
   function getJobArray() {
     const array = Array.from(jobData, ([name, value]) => value);
     return array;

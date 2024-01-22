@@ -3,6 +3,25 @@ import PersonalInfo from "./PersonalInfo";
 import EducationInfo from "./EducationInfo";
 import JobExperience from "./JobExperience";
 
+function getJobInitialMap() {
+  const JobInitialMap = new Map();
+  JobInitialMap.set("0", {
+    id: "0",
+    company: "",
+    jobTitle: "",
+    description: "",
+    startDate: "",
+    endDate: "",
+  });
+  return JobInitialMap;
+}
+
+function getEducationInitialMap() {
+  const educationInitialMap = new Map();
+  educationInitialMap.set("0", { id: "0", school: "", title: "", date: "" });
+  return educationInitialMap;
+}
+
 function StatusButton({ handleClick, value, btnClass, content }) {
   return (
     <button
@@ -16,6 +35,9 @@ function StatusButton({ handleClick, value, btnClass, content }) {
 }
 function CvForm() {
   const [status, setStatus] = useState("");
+  const [educationData, setEducationData] = useState(getEducationInitialMap());
+  const [jobData, setJobData] = useState(getJobInitialMap());
+
   return (
     <form>
       <fieldset>
@@ -24,11 +46,19 @@ function CvForm() {
       </fieldset>
       <fieldset>
         <legend>Estudios realizados</legend>
-        <EducationInfo status={status}></EducationInfo>
+        <EducationInfo
+          status={status}
+          educationData={educationData}
+          setEducationData={setEducationData}
+        ></EducationInfo>
       </fieldset>
       <fieldset>
         <legend>Experiencia laboral</legend>
-        <JobExperience status={status}></JobExperience>
+        <JobExperience
+          status={status}
+          jobData={jobData}
+          setJobData={setJobData}
+        ></JobExperience>
       </fieldset>
       <StatusButton
         btnClass={"secondaryBtn"}

@@ -55,11 +55,7 @@ function EducationField({
   );
 }
 
-function EducationInfo({ status }) {
-  const initialMap = new Map();
-  initialMap.set("0", { id: "0", school: "", title: "", date: "" });
-  const [educationData, setEducationData] = useState(initialMap);
-
+function EducationInfo({ status, educationData, setEducationData }) {
   function getEducationArray() {
     const array = Array.from(educationData, ([name, value]) => value);
     return array;
