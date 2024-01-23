@@ -21,6 +21,8 @@ function DateInput({ name, index, dateValue, onInput }) {
         value={dateString}
         onChange={(e) => setDateObj(e.target.value)}
         name={index > -1 ? `${name}[${index}]` : name}
+        min={"1950-01-01"}
+        max={"2025-01-01"}
       />
     </label>
   );
