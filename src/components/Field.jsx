@@ -32,11 +32,12 @@ function validateInput(
   errors,
   setErrors,
   setErrorValue,
-  dataObj
+  dataObj,
+  name
 ) {
   const errorText = inputValidation(text);
   const tempErrorsMap = new Map([...errors]);
-  const errorKey = dataObj ? dataObj.id : name;
+  const errorKey = dataObj.id === "0" ? name : dataObj.id;
   if (errorText) {
     setErrorValue(errorText);
     tempErrorsMap.set(errorKey, errorText);
@@ -44,7 +45,7 @@ function validateInput(
   } else {
     setErrorValue("");
     if (errors.has(errorKey)) {
-      tempErrorsMap.set(errorKey, "");
+      tempErrorsMap.delete(errorKey);
       setErrors(tempErrorsMap);
     }
   }
@@ -76,7 +77,8 @@ function Field({
       errors,
       setErrors,
       setErrorValue,
-      dataObj
+      dataObj,
+      name
     );
 
     if (dataObj) {
