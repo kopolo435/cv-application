@@ -30,4 +30,11 @@ function cellphoneTest(text) {
   }
 }
 
-export { nameInputTest, emailInputTest, cellphoneTest };
+function requiredTestField(text) {
+  if (text.length === 0) {
+    return "Debe llenar este campo";
+  }
+  return "";
+}
+
+export { nameInputTest, emailInputTest, cellphoneTest, requiredTestField };
