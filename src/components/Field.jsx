@@ -41,8 +41,11 @@ function validateInput(
   const errorKey = dataObj.id === "0" ? name : dataObj.id;
   if (errorText) {
     setErrorValue(errorText);
-    tempErrorsMap.set(errorKey, errorText);
-    setErrors(tempErrorsMap);
+    setErrors((prevErrors) => {
+      const tempMap = new Map([...prevErrors]);
+      tempMap.set(errorKey, errorText);
+      return tempMap;
+    });
   } else {
     setErrorValue("");
     if (errors.has(errorKey)) {
