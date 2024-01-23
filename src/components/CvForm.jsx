@@ -28,6 +28,8 @@ function CvForm({
   skillData,
   setSkillData,
 }) {
+  const [errors, setErrors] = useState(new Map());
+
   return (
     <form>
       <fieldset>
@@ -36,6 +38,8 @@ function CvForm({
           status={status}
           personalData={personalData}
           setPersonalData={setPersonalData}
+          errors={errors}
+          setErrors={setErrors}
         ></PersonalInfo>
       </fieldset>
       <fieldset>
