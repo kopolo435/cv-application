@@ -68,6 +68,8 @@ function CvForm({
           status={status}
           skillData={skillData}
           setSkillData={setSkillData}
+          errors={errors}
+          setErrors={setErrors}
         ></SkillInfo>
       </fieldset>
       <StatusButton
