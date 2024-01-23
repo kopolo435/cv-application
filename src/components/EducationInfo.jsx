@@ -2,12 +2,15 @@ import Field from "./Field";
 import DateField from "./DateField";
 import Button from "./Button";
 import { useState } from "react";
+import { requiredTestField } from "../javascript/inputValidation";
 function EducationField({
   status,
   index,
   dataObj = null,
   educationData,
   handleDataMapUpdate,
+  errors,
+  setErrors,
 }) {
   function deleteEducationField() {
     const newMap = new Map([...educationData]);
@@ -27,6 +30,9 @@ function EducationField({
         dataMap={educationData}
         dataObjProperty={"school"}
         handleDataMapUpdate={handleDataMapUpdate}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={requiredTestField}
       ></Field>
       <Field
         type="text"
@@ -38,6 +44,9 @@ function EducationField({
         dataMap={educationData}
         dataObjProperty={"title"}
         handleDataMapUpdate={handleDataMapUpdate}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={requiredTestField}
       ></Field>
       <DateField
         status={status}
@@ -47,6 +56,9 @@ function EducationField({
         dataMap={educationData}
         dataObjProperty={"date"}
         handleDataMapUpdate={handleDataMapUpdate}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={requiredTestField}
       ></DateField>
       {status === "edit" && (
         <Button
@@ -59,7 +71,13 @@ function EducationField({
   );
 }
 
-function EducationInfo({ status, educationData, setEducationData }) {
+function EducationInfo({
+  status,
+  educationData,
+  setEducationData,
+  errors,
+  setErrors,
+}) {
   function getEducationArray() {
     const array = Array.from(educationData, ([name, value]) => value);
     return array;
@@ -86,6 +104,8 @@ function EducationInfo({ status, educationData, setEducationData }) {
           key={data.id}
           educationData={educationData}
           handleDataMapUpdate={setEducationData}
+          errors={errors}
+          setErrors={setErrors}
         ></EducationField>
       ))}
 

@@ -3,12 +3,15 @@ import Field from "./Field";
 import DateField from "./DateField";
 import Button from "./Button";
 import TextAreaField from "./TextAreaField";
+import { requiredTestField } from "../javascript/inputValidation";
 function JobField({
   status,
   dataObj = null,
   index,
   jobData,
   handleDataMapUpdate,
+  errors,
+  setErrors,
 }) {
   function deleteJobField() {
     const newMap = new Map([...jobData]);
@@ -27,6 +30,9 @@ function JobField({
         dataMap={jobData}
         dataObjProperty={"company"}
         handleDataMapUpdate={handleDataMapUpdate}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={requiredTestField}
       ></Field>
       <Field
         type={"text"}
@@ -38,6 +44,9 @@ function JobField({
         dataMap={jobData}
         dataObjProperty={"jobTitle"}
         handleDataMapUpdate={handleDataMapUpdate}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={requiredTestField}
       ></Field>
       <TextAreaField
         status={status}
@@ -77,7 +86,7 @@ function JobField({
   );
 }
 
-function JobExperience({ status, jobData, setJobData }) {
+function JobExperience({ status, jobData, setJobData, errors, setErrors }) {
   function getJobArray() {
     const array = Array.from(jobData, ([name, value]) => value);
     return array;
@@ -106,6 +115,8 @@ function JobExperience({ status, jobData, setJobData }) {
           key={data.id}
           jobData={jobData}
           handleDataMapUpdate={setJobData}
+          errors={errors}
+          setErrors={setErrors}
         ></JobField>
       ))}
       {status === "edit" && (

@@ -48,6 +48,8 @@ function CvForm({
           status={status}
           educationData={educationData}
           setEducationData={setEducationData}
+          errors={errors}
+          setErrors={setErrors}
         ></EducationInfo>
       </fieldset>
       <fieldset>
@@ -56,6 +58,8 @@ function CvForm({
           status={status}
           jobData={jobData}
           setJobData={setJobData}
+          errors={errors}
+          setErrors={setErrors}
         ></JobExperience>
       </fieldset>
       <fieldset>
