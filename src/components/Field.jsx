@@ -70,16 +70,17 @@ function Field({
 
   function updateInputValue(text) {
     setFieldValue(text);
-
-    validateInput(
-      text,
-      inputValidation,
-      errors,
-      setErrors,
-      setErrorValue,
-      dataObj,
-      name
-    );
+    if (inputValidation) {
+      validateInput(
+        text,
+        inputValidation,
+        errors,
+        setErrors,
+        setErrorValue,
+        dataObj,
+        name
+      );
+    }
 
     if (dataObj) {
       const newDataObj = { ...dataObj, [dataObjProperty]: text };
