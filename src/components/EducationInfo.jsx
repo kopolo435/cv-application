@@ -11,6 +11,7 @@ function EducationField({
   handleDataMapUpdate,
   errors,
   setErrors,
+  submitting,
 }) {
   function deleteEducationField() {
     const newMap = new Map([...educationData]);
@@ -33,6 +34,7 @@ function EducationField({
         errors={errors}
         setErrors={setErrors}
         inputValidation={requiredTestField}
+        submitting={submitting}
       ></Field>
       <Field
         type="text"
@@ -47,6 +49,7 @@ function EducationField({
         errors={errors}
         setErrors={setErrors}
         inputValidation={requiredTestField}
+        submitting={submitting}
       ></Field>
       <DateField
         status={status}
@@ -59,6 +62,7 @@ function EducationField({
         errors={errors}
         setErrors={setErrors}
         inputValidation={requiredTestField}
+        submitting={submitting}
       ></DateField>
       {status === "edit" && (
         <Button
@@ -77,6 +81,7 @@ function EducationInfo({
   setEducationData,
   errors,
   setErrors,
+  submitting,
 }) {
   function getEducationArray() {
     const array = Array.from(educationData, ([name, value]) => value);
@@ -106,6 +111,7 @@ function EducationInfo({
           handleDataMapUpdate={setEducationData}
           errors={errors}
           setErrors={setErrors}
+          submitting={submitting}
         ></EducationField>
       ))}
 

@@ -9,6 +9,7 @@ function SkillField({
   handleDataMapUpdate,
   errors,
   setErrors,
+  submitting,
 }) {
   function deleteSkillField() {
     const newMap = new Map([...skillData]);
@@ -30,6 +31,7 @@ function SkillField({
         errors={errors}
         setErrors={setErrors}
         inputValidation={requiredTestField}
+        submitting={submitting}
       ></Field>
       {status === "edit" && (
         <Button
@@ -42,7 +44,14 @@ function SkillField({
   );
 }
 
-function SkillInfo({ status, skillData, setSkillData, errors, setErrors }) {
+function SkillInfo({
+  status,
+  skillData,
+  setSkillData,
+  errors,
+  setErrors,
+  submitting,
+}) {
   function getSkillArray() {
     const array = Array.from(skillData, ([name, value]) => value);
     return array;
@@ -69,6 +78,7 @@ function SkillInfo({ status, skillData, setSkillData, errors, setErrors }) {
           handleDataMapUpdate={setSkillData}
           errors={errors}
           setErrors={setErrors}
+          submitting={submitting}
         ></SkillField>
       ))}
 

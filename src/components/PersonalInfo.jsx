@@ -10,6 +10,7 @@ function PersonalInfo({
   setPersonalData,
   errors,
   setErrors,
+  submitting,
 }) {
   return (
     <div className="inputContainer">
@@ -25,6 +26,7 @@ function PersonalInfo({
         errors={errors}
         setErrors={setErrors}
         inputValidation={nameInputTest}
+        submitting={submitting}
       ></Field>
       <Field
         type="email"
@@ -38,6 +40,7 @@ function PersonalInfo({
         errors={errors}
         setErrors={setErrors}
         inputValidation={emailInputTest}
+        submitting={submitting}
       ></Field>
       <Field
         type="tel"
@@ -51,6 +54,7 @@ function PersonalInfo({
         errors={errors}
         setErrors={setErrors}
         inputValidation={cellphoneTest}
+        submitting={submitting}
       ></Field>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 function Input({ type, inputName, fieldValue, onInput, label, errorValue }) {
   return (
@@ -64,9 +65,34 @@ function Field({
   errors,
   setErrors,
   inputValidation,
+  submitting,
 }) {
   const [fieldValue, setFieldValue] = useState("");
   const [errorValue, setErrorValue] = useState("");
+
+  useEffect(() => {
+    // Validate input when submitting changes
+    if (submitting) {
+      validateInput(
+        fieldValue,
+        inputValidation,
+        errors,
+        setErrors,
+        setErrorValue,
+        dataObj,
+        name
+      );
+    }
+  }, [
+    submitting,
+    fieldValue,
+    inputValidation,
+    errors,
+    setErrors,
+    setErrorValue,
+    dataObj,
+    name,
+  ]);
 
   function updateInputValue(text) {
     setFieldValue(text);

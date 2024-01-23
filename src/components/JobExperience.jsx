@@ -12,6 +12,7 @@ function JobField({
   handleDataMapUpdate,
   errors,
   setErrors,
+  submitting,
 }) {
   function deleteJobField() {
     const newMap = new Map([...jobData]);
@@ -33,6 +34,7 @@ function JobField({
         errors={errors}
         setErrors={setErrors}
         inputValidation={requiredTestField}
+        submitting={submitting}
       ></Field>
       <Field
         type={"text"}
@@ -47,6 +49,7 @@ function JobField({
         errors={errors}
         setErrors={setErrors}
         inputValidation={requiredTestField}
+        submitting={submitting}
       ></Field>
       <TextAreaField
         status={status}
@@ -86,7 +89,14 @@ function JobField({
   );
 }
 
-function JobExperience({ status, jobData, setJobData, errors, setErrors }) {
+function JobExperience({
+  status,
+  jobData,
+  setJobData,
+  errors,
+  setErrors,
+  submitting,
+}) {
   function getJobArray() {
     const array = Array.from(jobData, ([name, value]) => value);
     return array;
@@ -117,6 +127,7 @@ function JobExperience({ status, jobData, setJobData, errors, setErrors }) {
           handleDataMapUpdate={setJobData}
           errors={errors}
           setErrors={setErrors}
+          submitting={submitting}
         ></JobField>
       ))}
       {status === "edit" && (
