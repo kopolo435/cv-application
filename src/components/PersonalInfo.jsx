@@ -1,6 +1,16 @@
 import Field from "./Field";
-
-function PersonalInfo({ status, personalData, setPersonalData }) {
+import {
+  nameInputTest,
+  emailInputTest,
+  cellphoneTest,
+} from "../javascript/inputValidation";
+function PersonalInfo({
+  status,
+  personalData,
+  setPersonalData,
+  errors,
+  setErrors,
+}) {
   return (
     <div className="inputContainer">
       <Field
@@ -12,6 +22,9 @@ function PersonalInfo({ status, personalData, setPersonalData }) {
         dataMap={personalData}
         dataObjProperty={"nombre"}
         handleDataMapUpdate={setPersonalData}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={nameInputTest}
       ></Field>
       <Field
         type="email"
@@ -22,6 +35,9 @@ function PersonalInfo({ status, personalData, setPersonalData }) {
         dataMap={personalData}
         dataObjProperty={"correo"}
         handleDataMapUpdate={setPersonalData}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={emailInputTest}
       ></Field>
       <Field
         type="tel"
@@ -32,6 +48,9 @@ function PersonalInfo({ status, personalData, setPersonalData }) {
         dataMap={personalData}
         dataObjProperty={"celular"}
         handleDataMapUpdate={setPersonalData}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={cellphoneTest}
       ></Field>
     </div>
   );
