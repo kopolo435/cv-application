@@ -13,8 +13,11 @@ function SkillField({
 }) {
   function deleteSkillField() {
     const newMap = new Map([...skillData]);
+    const newErrors = new Map([...errors]);
     newMap.delete(dataObj.id);
+    newErrors.delete(dataObj.id);
     handleDataMapUpdate(newMap);
+    setErrors(newErrors);
   }
   return (
     <div>

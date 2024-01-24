@@ -19,8 +19,11 @@ function JobField({
 }) {
   function deleteJobField() {
     const newMap = new Map([...jobData]);
+    const newErrors = new Map([...errors]);
     newMap.delete(dataObj.id);
+    newErrors.delete(dataObj.id);
     handleDataMapUpdate(newMap);
+    setErrors(newErrors);
   }
   return (
     <div className="JobField">

@@ -18,8 +18,11 @@ function EducationField({
 }) {
   function deleteEducationField() {
     const newMap = new Map([...educationData]);
+    const newErrors = new Map([...errors]);
     newMap.delete(dataObj.id);
+    newErrors.delete(dataObj.id);
     handleDataMapUpdate(newMap);
+    setErrors(newErrors);
   }
 
   return (
