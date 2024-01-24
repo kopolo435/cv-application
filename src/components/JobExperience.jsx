@@ -3,7 +3,10 @@ import Field from "./Field";
 import DateField from "./DateField";
 import Button from "./Button";
 import TextAreaField from "./TextAreaField";
-import { requiredTestField } from "../javascript/inputValidation";
+import {
+  requiredTestField,
+  dateInputTest,
+} from "../javascript/inputValidation";
 function JobField({
   status,
   dataObj = null,
@@ -68,6 +71,10 @@ function JobField({
         dataMap={jobData}
         dataObjProperty={"startDate"}
         handleDataMapUpdate={handleDataMapUpdate}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={dateInputTest}
+        submitting={submitting}
       ></DateField>
       <DateField
         status={status}
@@ -77,6 +84,10 @@ function JobField({
         dataMap={jobData}
         dataObjProperty={"endDate"}
         handleDataMapUpdate={handleDataMapUpdate}
+        errors={errors}
+        setErrors={setErrors}
+        inputValidation={dateInputTest}
+        submitting={submitting}
       ></DateField>
       {status === "edit" && (
         <Button

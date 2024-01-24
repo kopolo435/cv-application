@@ -2,7 +2,10 @@ import Field from "./Field";
 import DateField from "./DateField";
 import Button from "./Button";
 import { useState } from "react";
-import { requiredTestField } from "../javascript/inputValidation";
+import {
+  requiredTestField,
+  dateInputTest,
+} from "../javascript/inputValidation";
 function EducationField({
   status,
   index,
@@ -61,7 +64,7 @@ function EducationField({
         handleDataMapUpdate={handleDataMapUpdate}
         errors={errors}
         setErrors={setErrors}
-        inputValidation={requiredTestField}
+        inputValidation={dateInputTest}
         submitting={submitting}
       ></DateField>
       {status === "edit" && (
