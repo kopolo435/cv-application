@@ -37,4 +37,27 @@ function requiredTestField(text) {
   return "";
 }
 
-export { nameInputTest, emailInputTest, cellphoneTest, requiredTestField };
+function isDateInRange(dateToCheck, startDate, endDate) {
+  return dateToCheck >= startDate && dateToCheck <= endDate;
+}
+
+function dateInputTest(dateObj) {
+  const minDate = new Date("1950-01-01");
+  const maxDate = new Date("2025-01-01");
+  if (typeof dateObj !== "object") {
+    return "Debe ingresar una fecha";
+  }
+  if (!isDateInRange(dateObj, minDate, maxDate)) {
+    return "La fecha ingresada debe estar entre 1950 y 2025";
+  }
+
+  return "";
+}
+
+export {
+  nameInputTest,
+  emailInputTest,
+  cellphoneTest,
+  requiredTestField,
+  dateInputTest,
+};
