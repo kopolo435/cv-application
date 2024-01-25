@@ -1,0 +1,36 @@
+* {
+  margin: 0px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 2px 5px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    input {
+      max-width: 35em;
+    }
+  }
+}
+
+.personalInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.errorText {
+  color: red;
+}
