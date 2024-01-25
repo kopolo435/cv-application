@@ -95,6 +95,7 @@ function JobField({
       {status === "edit" && (
         <Button
           handleClick={deleteJobField}
+          btnClass={"removeField"}
           type={"button"}
           content={"Borrar"}
         ></Button>

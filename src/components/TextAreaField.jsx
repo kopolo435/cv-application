@@ -11,16 +11,18 @@ function TextAreaInfo({ name, textValue }) {
 
 function TextAreaInput({ name, index, textValue, onInput }) {
   return (
-    <label>
-      {name}
-      <textarea
-        name={index > -1 ? `${name}[${index}]` : name}
-        cols="30"
-        rows="5"
-        value={textValue}
-        onChange={(e) => onInput(e.target.value)}
-      ></textarea>
-    </label>
+    <div className="textAreaInput">
+      <label>
+        {name}
+        <textarea
+          name={index > -1 ? `${name}[${index}]` : name}
+          cols="30"
+          rows="5"
+          value={textValue}
+          onChange={(e) => onInput(e.target.value)}
+        ></textarea>
+      </label>
+    </div>
   );
 }
 
