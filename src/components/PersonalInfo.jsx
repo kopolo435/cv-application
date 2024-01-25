@@ -13,7 +13,7 @@ function PersonalInfo({
   submitting,
 }) {
   return (
-    <div className="inputContainer">
+    <div className="personalInfoContainer">
       <Field
         type="text"
         label={"Nombre"}

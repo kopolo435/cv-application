@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 function Input({ type, inputName, fieldValue, onInput, label, errorValue }) {
   return (
-    <div>
+    <div className="inputContainer">
       <label>
         {label}
         <input
@@ -13,7 +13,7 @@ function Input({ type, inputName, fieldValue, onInput, label, errorValue }) {
           onChange={(e) => onInput(e.target.value)}
         />
       </label>
-      <p>{errorValue}</p>
+      <p className="errorText">{errorValue}</p>
     </div>
   );
 }

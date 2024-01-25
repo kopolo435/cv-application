@@ -124,7 +124,7 @@ function EducationInfo({
       {status === "edit" && (
         <Button
           content={"Añadir otro estudio"}
-          btnClass={"addEducation"}
+          btnClass={"addField"}
           handleClick={addEducationField}
           type={"button"}
         ></Button>
