@@ -1,5 +1,6 @@
 import CvForm from "./CvForm";
 import { useState } from "react";
+import Button from "./Button";
 
 function getPersonalInfoMap() {
   const personalInfoInitialMap = new Map();
@@ -32,6 +33,11 @@ function MainDisplay() {
         skillData={skillData}
         setSkillData={setSkillData}
       ></CvForm>
+      <Button
+        type={"button"}
+        content={"Editar"}
+        handleClick={() => setStatus("edit")}
+      ></Button>
     </main>
   );
 }

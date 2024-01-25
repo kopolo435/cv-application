@@ -4,14 +4,7 @@ import EducationInfo from "./EducationInfo";
 import JobExperience from "./JobExperience";
 import SkillInfo from "./SkillsInfo";
 import { useEffect } from "react";
-
-function StatusButton({ handleClick, type, value, btnClass, content }) {
-  return (
-    <button type={type} onClick={() => handleClick(value)} className={btnClass}>
-      {content}
-    </button>
-  );
-}
+import Button from "./Button";
 
 function CvForm({
   status,
@@ -37,16 +30,14 @@ function CvForm({
     if (submitting) {
       setErrors((currentErrors) => {
         if (currentErrors.size === 0) {
-          console.log("Form submitted successfully!");
-        } else {
-          console.log("Form validation failed. Please correct errors.");
+          setStatus("submitted");
         }
         return currentErrors; // Return the current state to ensure no changes
       });
 
       setSubmitting(false);
     }
-  }, [submitting, setErrors]);
+  }, [submitting, setErrors, setStatus]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -94,20 +85,7 @@ function CvForm({
           submitting={submitting}
         ></SkillInfo>
       </fieldset>
-      <StatusButton
-        btnClass={"secondaryBtn"}
-        type={"button"}
-        handleClick={setStatus}
-        value={"edit"}
-        content={"Editar contenido"}
-      ></StatusButton>
-      <StatusButton
-        btnClass={"secondaryBtn"}
-        handleClick={setStatus}
-        type={"submit"}
-        value={"submit"}
-        content={"Guardar contenido"}
-      ></StatusButton>
+      <Button type={"submitt"} content={"Guardar contenido"}></Button>
     </form>
   );
 }
