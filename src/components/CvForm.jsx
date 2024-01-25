@@ -35,9 +35,11 @@ function CvForm({
         return currentErrors; // Return the current state to ensure no changes
       });
 
-      if (currentErrorsSize === 0) {
-        setStatus("submitted");
-      }
+      setTimeout(() => {
+        if (currentErrorsSize === 0) {
+          setStatus("submitted");
+        }
+      }, 0);
 
       setSubmitting(false);
     }
