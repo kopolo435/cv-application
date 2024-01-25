@@ -26,7 +26,7 @@ function JobField({
     setErrors(newErrors);
   }
   return (
-    <div className="JobField">
+    <div className="jobField">
       <Field
         type={"text"}
         label={"Compañia"}
@@ -130,7 +130,7 @@ function JobExperience({
   }
   const jobDataArray = getJobArray();
   return (
-    <div>
+    <div className="jobContainer">
       {jobDataArray.map((data, index) => (
         <JobField
           status={status}
@@ -147,7 +147,7 @@ function JobExperience({
       {status === "edit" && (
         <Button
           content={"Añadir otro estudio"}
-          btnClass={"addEducation"}
+          btnClass={"addField"}
           handleClick={addJobField}
           type={"button"}
         ></Button>

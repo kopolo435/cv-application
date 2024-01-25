@@ -20,7 +20,7 @@ function SkillField({
     setErrors(newErrors);
   }
   return (
-    <div>
+    <div className="skillField">
       <Field
         type={"text"}
         label={"Habilidad"}
@@ -70,7 +70,7 @@ function SkillInfo({
   }
   const skillDataArray = getSkillArray();
   return (
-    <div className="skillInfo">
+    <div className="skillContainer">
       {skillDataArray.map((data, index) => (
         <SkillField
           status={status}
@@ -88,6 +88,7 @@ function SkillInfo({
       {status === "edit" && (
         <Button
           type={"button"}
+          btnClass={"addField"}
           content={"Añadir habilidad"}
           handleClick={addSkillField}
         ></Button>

@@ -106,7 +106,7 @@ function EducationInfo({
   }
   const educationDataArray = getEducationArray();
   return (
-    <div className="inputContainer">
+    <div className="educationContainer">
       {educationDataArray.map((data, index) => (
         <EducationField
           status={status}
