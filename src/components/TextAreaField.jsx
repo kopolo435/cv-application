@@ -33,7 +33,9 @@ function TextAreaField({
   dataObjProperty,
   handleDataMapUpdate,
 }) {
-  const [textValue, setTextValue] = useState("");
+  const [textValue, setTextValue] = useState(
+    dataObj ? dataObj[dataObjProperty] : ""
+  );
   function updateInputValue(value) {
     setTextValue(value);
     if (dataObj) {

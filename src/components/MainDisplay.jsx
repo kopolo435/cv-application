@@ -9,7 +9,7 @@ function getPersonalInfoMap() {
     id: "0",
     nombre: "",
     correo: "",
-    telefono: "",
+    celular: "",
   });
   return personalInfoInitialMap;
 }

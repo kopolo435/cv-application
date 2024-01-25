@@ -70,7 +70,9 @@ function Field({
   inputValidation,
   submitting,
 }) {
-  const [fieldValue, setFieldValue] = useState("");
+  const [fieldValue, setFieldValue] = useState(
+    dataObj ? dataObj[dataObjProperty] : ""
+  );
   const [errorValue, setErrorValue] = useState("");
 
   useEffect(() => {

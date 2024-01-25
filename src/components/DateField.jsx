@@ -82,7 +82,9 @@ function DateField({
   inputValidation,
   submitting,
 }) {
-  const [dateValue, setDateValue] = useState("");
+  const [dateValue, setDateValue] = useState(
+    dataObj ? dataObj[dataObjProperty] : ""
+  );
   const [errorValue, setErrorValue] = useState("");
 
   useEffect(() => {
