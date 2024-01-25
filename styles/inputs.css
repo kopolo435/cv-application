@@ -2,6 +2,11 @@
   margin: 0px;
 }
 
+form {
+  padding: 20px;
+  max-width: 570px;
+}
+
 input {
   border-radius: 5px;
   border: 1px solid black;
@@ -44,8 +49,31 @@ input {
 
 .dateInput label {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 5px;
   align-items: end;
+}
+
+.jobContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 25px;
+}
+
+.jobField {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.textAreaInput label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.textAreaInput textarea {
+  max-width: 35em;
 }
 
 .addField {
