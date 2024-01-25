@@ -42,7 +42,7 @@ function DateInput({ name, index, dateValue, onInput, errorValue }) {
   }
 
   return (
-    <div>
+    <div className="dateInput">
       <label>
         {name}
         <input

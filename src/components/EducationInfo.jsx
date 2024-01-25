@@ -73,6 +73,7 @@ function EducationField({
       {status === "edit" && (
         <Button
           handleClick={deleteEducationField}
+          btnClass={"removeField"}
           type={"button"}
           content={"Borrar"}
         ></Button>
