@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import Button from "./Button";
 
 function CvForm({
-  status,
   setStatus,
   educationData,
   setEducationData,
@@ -20,6 +19,7 @@ function CvForm({
 }) {
   const [errors, setErrors] = useState(new Map());
   const [submitting, setSubmitting] = useState(false);
+  const status = "edit";
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -28,12 +28,16 @@ function CvForm({
 
   useEffect(() => {
     if (submitting) {
+      let currentErrorsSize;
+
       setErrors((currentErrors) => {
-        if (currentErrors.size === 0) {
-          setStatus("submitted");
-        }
+        currentErrorsSize = currentErrors.size;
         return currentErrors; // Return the current state to ensure no changes
       });
+
+      if (currentErrorsSize === 0) {
+        setStatus("submitted");
+      }
 
       setSubmitting(false);
     }
