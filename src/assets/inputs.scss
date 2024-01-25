@@ -82,6 +82,19 @@ input {
   }
 }
 
+.skillContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+}
+
+.skillField {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .addField {
   align-self: flex-end;
 }
