@@ -15,12 +15,12 @@ function getPersonalInfoMap() {
 }
 
 function MainDisplay() {
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("edit");
   const [educationData, setEducationData] = useState(new Map());
   const [jobData, setJobData] = useState(new Map());
   const [personalData, setPersonalData] = useState(getPersonalInfoMap());
   const [skillData, setSkillData] = useState(new Map());
-  return (
+  return status === "edit" ? (
     <main>
       <CvForm
         status={status}
@@ -34,17 +34,26 @@ function MainDisplay() {
         skillData={skillData}
         setSkillData={setSkillData}
       ></CvForm>
-      <Button
-        type={"button"}
-        content={"Editar"}
-        handleClick={() => setStatus("edit")}
-      ></Button>
       <Preview
         educationData={educationData}
         jobData={jobData}
         personalData={personalData}
         skillData={skillData}
       ></Preview>
+    </main>
+  ) : (
+    <main>
+      <Preview
+        educationData={educationData}
+        jobData={jobData}
+        personalData={personalData}
+        skillData={skillData}
+      ></Preview>
+      <Button
+        type={"button"}
+        content={"Editar"}
+        handleClick={() => setStatus("edit")}
+      ></Button>
     </main>
   );
 }
