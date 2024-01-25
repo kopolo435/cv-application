@@ -31,6 +31,33 @@ input {
   padding: 20px;
 }
 
+.educationContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.educationField {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dateInput {
+  label {
+    display: flex;
+    gap: 10px;
+    align-items: end;
+  }
+}
+
+.addField {
+  align-self: flex-end;
+}
+.removeField {
+  align-self: flex-start;
+}
 .errorText {
   color: red;
 }
