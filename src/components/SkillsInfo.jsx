@@ -39,6 +39,7 @@ function SkillField({
       {status === "edit" && (
         <Button
           handleClick={deleteSkillField}
+          btnClass={"removeField"}
           type={"button"}
           content={"Borrar"}
         ></Button>
