@@ -1,6 +1,7 @@
 import CvForm from "./CvForm";
 import { useState } from "react";
 import Button from "./Button";
+import Preview from "./cvDisplay/Preview";
 
 function getPersonalInfoMap() {
   const personalInfoInitialMap = new Map();
@@ -38,6 +39,12 @@ function MainDisplay() {
         content={"Editar"}
         handleClick={() => setStatus("edit")}
       ></Button>
+      <Preview
+        educationData={educationData}
+        jobData={jobData}
+        personalData={personalData}
+        skillData={skillData}
+      ></Preview>
     </main>
   );
 }
