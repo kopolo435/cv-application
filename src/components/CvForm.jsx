@@ -5,6 +5,7 @@ import JobExperience from "./JobExperience";
 import SkillInfo from "./SkillsInfo";
 import { useEffect } from "react";
 import Button from "./Button";
+import "../../styles/inputs.css";
 
 function CvForm({
   setStatus,
