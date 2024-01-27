@@ -66,32 +66,34 @@ function JobField({
         dataObjProperty={"description"}
         handleDataMapUpdate={handleDataMapUpdate}
       ></TextAreaField>
-      <DateField
-        status={status}
-        name={"startDate"}
-        index={index}
-        dataObj={dataObj}
-        dataMap={jobData}
-        dataObjProperty={"startDate"}
-        handleDataMapUpdate={handleDataMapUpdate}
-        errors={errors}
-        setErrors={setErrors}
-        inputValidation={dateInputTest}
-        submitting={submitting}
-      ></DateField>
-      <DateField
-        status={status}
-        name={"endDate"}
-        index={index}
-        dataObj={dataObj}
-        dataMap={jobData}
-        dataObjProperty={"endDate"}
-        handleDataMapUpdate={handleDataMapUpdate}
-        errors={errors}
-        setErrors={setErrors}
-        inputValidation={dateInputTest}
-        submitting={submitting}
-      ></DateField>
+      <div className="jobDates">
+        <DateField
+          status={status}
+          name={"startDate"}
+          index={index}
+          dataObj={dataObj}
+          dataMap={jobData}
+          dataObjProperty={"startDate"}
+          handleDataMapUpdate={handleDataMapUpdate}
+          errors={errors}
+          setErrors={setErrors}
+          inputValidation={dateInputTest}
+          submitting={submitting}
+        ></DateField>
+        <DateField
+          status={status}
+          name={"endDate"}
+          index={index}
+          dataObj={dataObj}
+          dataMap={jobData}
+          dataObjProperty={"endDate"}
+          handleDataMapUpdate={handleDataMapUpdate}
+          errors={errors}
+          setErrors={setErrors}
+          inputValidation={dateInputTest}
+          submitting={submitting}
+        ></DateField>
+      </div>
       {status === "edit" && (
         <Button
           handleClick={deleteJobField}
