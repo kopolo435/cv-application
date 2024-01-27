@@ -5,6 +5,12 @@
 form {
   padding: 20px;
   max-width: 570px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+form button[type=submitt] {
+  justify-self: flex-end;
 }
 
 input {
@@ -74,6 +80,7 @@ input {
 }
 .textAreaInput textarea {
   max-width: 35em;
+  resize: none;
 }
 
 .skillContainer {
@@ -87,6 +94,12 @@ input {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.jobDates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .addField {
