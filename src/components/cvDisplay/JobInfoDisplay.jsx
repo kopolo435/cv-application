@@ -19,7 +19,7 @@ function JobInfoDIsplay({ data, type }) {
 
   return jobData.length > 0 ? (
     <div className="jobExperience">
-      <p>Experiencia laboral</p>
+      <p className="listTitle">Experiencia laboral</p>
       <ul>
         {jobData.map((value) => (
           <Info key={value.id} data={value}></Info>
@@ -29,7 +29,7 @@ function JobInfoDIsplay({ data, type }) {
   ) : (
     type === "preview" && (
       <div className="jobExperience">
-        <p>Experiencia laboral</p>
+        <p className="listTitle">Experiencia laboral</p>
         <p>No ha agregado experiencia laboral</p>
       </div>
     )

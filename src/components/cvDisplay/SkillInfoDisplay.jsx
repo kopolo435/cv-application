@@ -11,7 +11,7 @@ function SkillInfoDisplay({ data, type }) {
 
   return skillArray.length > 0 ? (
     <div className="habilidades">
-      <p>Habilidades</p>
+      <p className="listTitle">Habilidades</p>
       <ul>
         {skillArray.map((value) => (
           <Info key={value.id} data={value}></Info>
@@ -21,7 +21,7 @@ function SkillInfoDisplay({ data, type }) {
   ) : (
     type === "preview" && (
       <div className="habilidades">
-        <p>Habilidades</p>
+        <p className="listTitle">Habilidades</p>
         <p>No ha agregado habilidades</p>
       </div>
     )

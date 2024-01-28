@@ -17,7 +17,7 @@ function EducationInfoDisplay({ data, type }) {
 
   return educationArray.length > 0 ? (
     <div className="education">
-      <p>Estudios realizados</p>
+      <p className="listTitle">Estudios realizados</p>
       <ul>
         {educationArray.map((value) => (
           <Info key={value.id} education={value}></Info>
@@ -27,7 +27,7 @@ function EducationInfoDisplay({ data, type }) {
   ) : (
     type === "preview" && (
       <div className="education">
-        <p>Estudios realizados</p>
+        <p className="listTitle">Estudios realizados</p>
         <p>No ha agregado estudios</p>
       </div>
     )
