@@ -2,9 +2,11 @@ function Footer() {
   return (
     <footer>
       <p>
-        Create by <a href="">@Kopolo435</a>
+        Create by <a href="https://github.com/kopolo435">@Kopolo435</a>
       </p>
-      <a href="">Repositorio del proyecto</a>
+      <a href="https://github.com/kopolo435/cv-application">
+        Repositorio del proyecto
+      </a>
     </footer>
   );
 }
