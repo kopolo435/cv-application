@@ -53,13 +53,15 @@ function MainDisplay() {
     <>
       <Header></Header>
       <main className="submittDisplay">
-        <Preview
-          educationData={educationData}
-          jobData={jobData}
-          personalData={personalData}
-          skillData={skillData}
-          divClass={"finalPreview"}
-        ></Preview>
+        <div className="finalPreviewContainer">
+          <Preview
+            educationData={educationData}
+            jobData={jobData}
+            personalData={personalData}
+            skillData={skillData}
+            divClass={"finalPreview"}
+          ></Preview>
+        </div>
         <div className="optionContainer">
           <Button
             type={"button"}

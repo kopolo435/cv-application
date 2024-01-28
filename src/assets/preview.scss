@@ -18,8 +18,23 @@
   min-width: 250px;
 }
 
+.finalPreviewContainer {
+  min-height: 500px;
+  max-width: 500px;
+  min-width: 300px;
+  height: fit-content;
+  flex: 1;
+  box-sizing: border-box;
+  box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
+  -webkit-box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
+  -moz-box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
+}
+
 .preview {
   display: none;
+  box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
+  -webkit-box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
+  -moz-box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
 }
 
 .rectangle {
@@ -52,12 +67,6 @@
 .jobExperience,
 .habilidades {
   min-height: 100px;
-}
-
-@media screen and (min-width: 400px) {
-  .finalPreview {
-    min-width: 300px;
-  }
 }
 
 @media only screen and (min-width: 750px) {
