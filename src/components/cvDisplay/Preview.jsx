@@ -11,13 +11,17 @@ function Preview({
 }) {
   return (
     <div className={divClass}>
-      <div className="personalInfo">
-        <p>Datos personales</p>
-        <PersonalInfoDisplay data={personalData}></PersonalInfoDisplay>
+      <div className="rectangle"></div>
+      <div className="triangle"></div>
+      <div className="previewContent">
+        <div className="personalInfo">
+          <p>Datos personales</p>
+          <PersonalInfoDisplay data={personalData}></PersonalInfoDisplay>
+        </div>
+        <EducationInfoDisplay data={educationData}></EducationInfoDisplay>
+        <JobInfoDIsplay data={jobData}></JobInfoDIsplay>
+        <SkillInfoDisplay data={skillData}></SkillInfoDisplay>
       </div>
-      <EducationInfoDisplay data={educationData}></EducationInfoDisplay>
-      <JobInfoDIsplay data={jobData}></JobInfoDIsplay>
-      <SkillInfoDisplay data={skillData}></SkillInfoDisplay>
     </div>
   );
 }

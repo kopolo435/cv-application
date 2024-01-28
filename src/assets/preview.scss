@@ -1,6 +1,6 @@
 .preview,
 .finalPreview {
-  background-color: aqua;
+  background-color: white;
   min-height: 500px;
   max-width: 500px;
   min-width: 250px;
@@ -9,6 +9,8 @@
   padding: 20px;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .finalPreview {
@@ -18,6 +20,31 @@
 
 .preview {
   display: none;
+}
+
+.rectangle {
+  background-color: var(--main500);
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  left: 0;
+}
+
+.triangle {
+  background-color: var(--main500);
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  transform: rotate(45deg);
+  left: -24px;
+  top: 32px;
+  z-index: 0;
+}
+
+.previewContent {
+  z-index: 1;
+  margin-left: 45px;
 }
 
 .personalInfo,
