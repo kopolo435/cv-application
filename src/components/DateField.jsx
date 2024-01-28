@@ -54,7 +54,7 @@ function DateInput({ name, index, dateValue, onInput, errorValue }) {
           max={"2025-01-01"}
         />
       </label>
-      <p>{errorValue}</p>
+      <p className="errorText">{errorValue}</p>
     </div>
   );
 }
