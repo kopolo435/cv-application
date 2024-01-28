@@ -10,8 +10,14 @@ form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   button[type="submitt"] {
-    justify-self: flex-end;
+    align-self: flex-end;
     padding: 5px 10px;
     background: var(--main500);
     color: var(--main50);

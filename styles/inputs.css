@@ -1,3 +1,36 @@
+:root {
+  --accentColor: hsl(150, 97%, 56%);
+  --main50: hsl(180, 10%, 96%);
+  --main100: hsl(168, 11%, 83%);
+  --main500: hsl(168, 28%, 29%);
+  --main700: hsl(168, 29%, 17%);
+  --main900: hsl(169, 28%, 11%);
+  --red500: #fc0c0c;
+  --redText: #ee0000;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.editDisplay {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+  justify-content: center;
+  background-color: var(--main50);
+}
+
+.submittDisplay {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: var(--main50);
+}
+
 * {
   margin: 0px;
 }
@@ -9,13 +42,35 @@ form {
   grid-template-columns: 1fr;
   gap: 20px;
 }
-form button[type=submitt] {
-  justify-self: flex-end;
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.formContainer button[type=submitt] {
+  align-self: flex-end;
+  padding: 5px 10px;
+  background: var(--main500);
+  color: var(--main50);
+  font-weight: 900;
+  border-radius: 10px;
+  border: none;
+}
+
+fieldset {
+  border: solid var(--main100);
+  padding: 5px;
+}
+fieldset legend {
+  float: left;
+  color: var(--main900);
 }
 
 input {
   border-radius: 5px;
-  border: 1px solid black;
+  border: 2px solid var(--main500);
+  color: var(--main900);
   padding: 2px 5px;
 }
 
@@ -28,6 +83,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  color: var(--main900);
 }
 .inputContainer label input {
   max-width: 35em;
@@ -58,6 +114,7 @@ input {
   flex-wrap: wrap;
   gap: 5px;
   align-items: end;
+  color: var(--main900);
 }
 
 .jobContainer {
@@ -77,6 +134,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  color: var(--main900);
 }
 .textAreaInput textarea {
   max-width: 35em;
@@ -104,18 +162,33 @@ input {
 
 .addField {
   align-self: flex-end;
+  padding: 2px 10px;
+  background: var(--main500);
+  color: var(--main50);
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
 }
 
 .removeField {
   align-self: flex-start;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: 2px solid var(--main500);
+  color: var(--main900);
 }
 
 .errorText {
-  color: red;
+  color: var(--redText);
 }
 
 @media only screen and (min-width: 750px) {
   fieldset {
     width: 300px;
+  }
+  form {
+    height: 80vh;
+    overflow: scroll;
+    overflow-x: hidden;
   }
 }/*# sourceMappingURL=inputs.css.map */
