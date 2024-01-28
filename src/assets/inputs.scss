@@ -30,11 +30,12 @@ fieldset {
   border: solid var(--main100);
   padding: 5px;
   width: 80vw;
-  max-width: 300px;
+  max-width: 327px;
 
   legend {
     float: left;
     color: var(--main900);
+    font-size: 18px;
   }
 }
 
@@ -152,6 +153,7 @@ input {
   border-radius: 5px;
   border: 2px solid var(--main500);
   color: var(--main900);
+  font-weight: 600;
 }
 .errorText {
   color: var(--redText);
@@ -159,6 +161,6 @@ input {
 
 @media only screen and (min-width: 750px) {
   fieldset {
-    width: 300px;
+    width: 327px;
   }
 }

@@ -49,6 +49,10 @@ header {
   background: var(--main500);
   padding: 10px;
   color: var(--main50);
+  h1 {
+    font-size: 24px;
+    font-family: "Urbanist", sans-serif;
+  }
 }
 
 footer {
@@ -58,4 +62,8 @@ footer {
   background-color: var(--main500);
   padding: 10px;
   color: var(--main50);
+
+  a {
+    color: var(--main100);
+  }
 }
