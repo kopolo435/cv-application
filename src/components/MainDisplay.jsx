@@ -2,6 +2,8 @@ import CvForm from "./CvForm";
 import { useState } from "react";
 import Button from "./Button";
 import Preview from "./cvDisplay/Preview";
+import "../../styles/main.css";
+import "../../styles/preview.css";
 
 function getPersonalInfoMap() {
   const personalInfoInitialMap = new Map();
