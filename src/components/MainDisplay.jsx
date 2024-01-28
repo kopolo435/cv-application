@@ -50,12 +50,15 @@ function MainDisplay() {
         jobData={jobData}
         personalData={personalData}
         skillData={skillData}
+        divClass={"finalPreview"}
       ></Preview>
-      <Button
-        type={"button"}
-        content={"Editar"}
-        handleClick={() => setStatus("edit")}
-      ></Button>
+      <div className="optionContainer">
+        <Button
+          type={"button"}
+          content={"Editar"}
+          handleClick={() => setStatus("edit")}
+        ></Button>
+      </div>
     </main>
   );
 }
