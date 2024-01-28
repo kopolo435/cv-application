@@ -60,6 +60,19 @@
 .previewContent {
   z-index: 1;
   margin-left: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  ul {
+    list-style: circle;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      margin-left: 15px;
+    }
+  }
 }
 
 .personalInfo,
