@@ -32,6 +32,8 @@
 
 .preview {
   display: none;
+  position: sticky;
+  top: 20px;
   box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
   -webkit-box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
   -moz-box-shadow: 2px 7px 5px 0px rgba(79, 74, 74, 0.75);
@@ -70,7 +72,7 @@
     flex-direction: column;
     gap: 10px;
     li {
-      margin-left: 15px;
+      margin-left: 20px;
     }
   }
 }
