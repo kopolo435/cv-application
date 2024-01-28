@@ -15,7 +15,6 @@ function Preview({
       <div className="triangle"></div>
       <div className="previewContent">
         <div className="personalInfo">
-          <p>Datos personales</p>
           <PersonalInfoDisplay data={personalData}></PersonalInfoDisplay>
         </div>
         <EducationInfoDisplay
