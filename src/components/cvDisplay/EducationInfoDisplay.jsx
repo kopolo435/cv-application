@@ -16,11 +16,14 @@ function EducationInfoDisplay({ data }) {
   const educationArray = Array.from(data, ([name, value]) => value);
 
   return (
-    <ul>
-      {educationArray.map((value) => (
-        <Info key={value.id} education={value}></Info>
-      ))}
-    </ul>
+    <div className="education">
+      <p>Estudios realizados</p>
+      <ul>
+        {educationArray.map((value) => (
+          <Info key={value.id} education={value}></Info>
+        ))}
+      </ul>
+    </div>
   );
 }
 

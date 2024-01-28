@@ -4,20 +4,29 @@ function formatDateToString(dateValue) {
 
 function Info({ data }) {
   return (
-    <div>
+    <li>
       <p>{data.company}</p>
       <p>{data.jobTitle}</p>
       <p>{data.description}</p>
       <p>{formatDateToString(data.startDate)}</p>
       <p>{formatDateToString(data.endDate)}</p>
-    </div>
+    </li>
   );
 }
 
 function JobInfoDIsplay({ data }) {
   const jobData = Array.from(data, ([name, value]) => value);
 
-  return jobData.map((value) => <Info key={value.id} data={value}></Info>);
+  return (
+    <div className="jobExperience">
+      <p>Experiencia laboral</p>
+      <ul>
+        {jobData.map((value) => (
+          <Info key={value.id} data={value}></Info>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default JobInfoDIsplay;

@@ -1,8 +1,8 @@
 function Info({ data }) {
   return (
-    <div>
+    <li>
       <p>{data.skill}</p>
-    </div>
+    </li>
   );
 }
 
@@ -10,7 +10,8 @@ function SkillInfoDisplay({ data }) {
   const skillArray = Array.from(data, ([name, value]) => value);
 
   return (
-    <div>
+    <div className="habilidades">
+      <p>Habilidades</p>
       {skillArray.map((value) => (
         <Info key={value.id} data={value}></Info>
       ))}
