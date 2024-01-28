@@ -1,3 +1,15 @@
+:root {
+  --accentColor: hsl(150, 97%, 56%);
+
+  --main50: hsl(180, 10%, 96%);
+  --main100: hsl(168, 11%, 83%);
+  --main500: hsl(168, 28%, 29%);
+  --main700: hsl(168, 29%, 17%);
+  --main900: hsl(169, 28%, 11%);
+
+  --red500: #fc0c0c;
+  --redText: #ee0000;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -7,6 +19,7 @@
   padding: 20px;
   gap: 30px;
   justify-content: center;
+  background-color: var(--main50);
 }
 
 .submittDisplay {
@@ -15,4 +28,5 @@
   gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: var(--main50);
 }
