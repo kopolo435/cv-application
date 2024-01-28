@@ -2,6 +2,8 @@ import CvForm from "./CvForm";
 import { useState } from "react";
 import Button from "./Button";
 import Preview from "./cvDisplay/Preview";
+import Header from "./Header";
+import Footer from "./Footer";
 import "../../styles/main.css";
 import "../../styles/preview.css";
 
@@ -23,43 +25,51 @@ function MainDisplay() {
   const [personalData, setPersonalData] = useState(getPersonalInfoMap());
   const [skillData, setSkillData] = useState(new Map());
   return status === "edit" ? (
-    <main className="editDisplay">
-      <CvForm
-        status={status}
-        setStatus={setStatus}
-        educationData={educationData}
-        setEducationData={setEducationData}
-        jobData={jobData}
-        setJobData={setJobData}
-        personalData={personalData}
-        setPersonalData={setPersonalData}
-        skillData={skillData}
-        setSkillData={setSkillData}
-      ></CvForm>
-      <Preview
-        educationData={educationData}
-        jobData={jobData}
-        personalData={personalData}
-        skillData={skillData}
-      ></Preview>
-    </main>
+    <>
+      <Header></Header>
+      <main className="editDisplay">
+        <CvForm
+          status={status}
+          setStatus={setStatus}
+          educationData={educationData}
+          setEducationData={setEducationData}
+          jobData={jobData}
+          setJobData={setJobData}
+          personalData={personalData}
+          setPersonalData={setPersonalData}
+          skillData={skillData}
+          setSkillData={setSkillData}
+        ></CvForm>
+        <Preview
+          educationData={educationData}
+          jobData={jobData}
+          personalData={personalData}
+          skillData={skillData}
+        ></Preview>
+      </main>
+      <Footer></Footer>
+    </>
   ) : (
-    <main className="submittDisplay">
-      <Preview
-        educationData={educationData}
-        jobData={jobData}
-        personalData={personalData}
-        skillData={skillData}
-        divClass={"finalPreview"}
-      ></Preview>
-      <div className="optionContainer">
-        <Button
-          type={"button"}
-          content={"Editar"}
-          handleClick={() => setStatus("edit")}
-        ></Button>
-      </div>
-    </main>
+    <>
+      <Header></Header>
+      <main className="submittDisplay">
+        <Preview
+          educationData={educationData}
+          jobData={jobData}
+          personalData={personalData}
+          skillData={skillData}
+          divClass={"finalPreview"}
+        ></Preview>
+        <div className="optionContainer">
+          <Button
+            type={"button"}
+            content={"Editar"}
+            handleClick={() => setStatus("edit")}
+          ></Button>
+        </div>
+      </main>
+      <Footer></Footer>
+    </>
   );
 }
 
