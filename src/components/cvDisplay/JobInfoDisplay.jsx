@@ -14,10 +14,10 @@ function Info({ data }) {
   );
 }
 
-function JobInfoDIsplay({ data }) {
+function JobInfoDIsplay({ data, type }) {
   const jobData = Array.from(data, ([name, value]) => value);
 
-  return (
+  return jobData.length > 0 ? (
     <div className="jobExperience">
       <p>Experiencia laboral</p>
       <ul>
@@ -26,6 +26,13 @@ function JobInfoDIsplay({ data }) {
         ))}
       </ul>
     </div>
+  ) : (
+    type === "preview" && (
+      <div className="jobExperience">
+        <p>Experiencia laboral</p>
+        <p>No ha agregado experiencia laboral</p>
+      </div>
+    )
   );
 }
 

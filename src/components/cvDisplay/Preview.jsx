@@ -18,9 +18,12 @@ function Preview({
           <p>Datos personales</p>
           <PersonalInfoDisplay data={personalData}></PersonalInfoDisplay>
         </div>
-        <EducationInfoDisplay data={educationData}></EducationInfoDisplay>
-        <JobInfoDIsplay data={jobData}></JobInfoDIsplay>
-        <SkillInfoDisplay data={skillData}></SkillInfoDisplay>
+        <EducationInfoDisplay
+          data={educationData}
+          type={divClass}
+        ></EducationInfoDisplay>
+        <JobInfoDIsplay data={jobData} type={divClass}></JobInfoDIsplay>
+        <SkillInfoDisplay data={skillData} type={divClass}></SkillInfoDisplay>
       </div>
     </div>
   );

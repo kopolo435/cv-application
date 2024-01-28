@@ -12,10 +12,10 @@ function Info({ education }) {
   );
 }
 
-function EducationInfoDisplay({ data }) {
+function EducationInfoDisplay({ data, type }) {
   const educationArray = Array.from(data, ([name, value]) => value);
 
-  return (
+  return educationArray.length > 0 ? (
     <div className="education">
       <p>Estudios realizados</p>
       <ul>
@@ -24,6 +24,13 @@ function EducationInfoDisplay({ data }) {
         ))}
       </ul>
     </div>
+  ) : (
+    type === "preview" && (
+      <div className="education">
+        <p>Estudios realizados</p>
+        <p>No ha agregado estudios</p>
+      </div>
+    )
   );
 }
 
