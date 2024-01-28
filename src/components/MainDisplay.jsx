@@ -23,7 +23,7 @@ function MainDisplay() {
   const [personalData, setPersonalData] = useState(getPersonalInfoMap());
   const [skillData, setSkillData] = useState(new Map());
   return status === "edit" ? (
-    <main>
+    <main className="editDisplay">
       <CvForm
         status={status}
         setStatus={setStatus}
@@ -44,7 +44,7 @@ function MainDisplay() {
       ></Preview>
     </main>
   ) : (
-    <main>
+    <main className="submittDisplay">
       <Preview
         educationData={educationData}
         jobData={jobData}
