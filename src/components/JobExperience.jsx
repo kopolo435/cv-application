@@ -61,6 +61,7 @@ function JobField({
         status={status}
         dataObj={dataObj}
         name={"experiencia"}
+        label={"Funciones"}
         index={index}
         dataMap={jobData}
         dataObjProperty={"description"}
@@ -70,6 +71,7 @@ function JobField({
         <DateField
           status={status}
           name={"startDate"}
+          label={"Inicio"}
           index={index}
           dataObj={dataObj}
           dataMap={jobData}
@@ -83,6 +85,7 @@ function JobField({
         <DateField
           status={status}
           name={"endDate"}
+          label={"Final"}
           index={index}
           dataObj={dataObj}
           dataMap={jobData}

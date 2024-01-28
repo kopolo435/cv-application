@@ -29,7 +29,7 @@ function EducationField({
     <div className="educationField">
       <Field
         type="text"
-        label={"School name"}
+        label={"Lugar de estudio"}
         name="schoolName"
         index={index}
         status={status}
@@ -44,7 +44,7 @@ function EducationField({
       ></Field>
       <Field
         type="text"
-        label={"Title"}
+        label={"Titulo"}
         name="title"
         index={index}
         status={status}
@@ -60,6 +60,7 @@ function EducationField({
       <DateField
         status={status}
         name={"EstudioCompletado"}
+        label={"Fecha de finalizacion"}
         index={index}
         dataObj={dataObj}
         dataMap={educationData}

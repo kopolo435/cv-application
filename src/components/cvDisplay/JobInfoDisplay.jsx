@@ -7,9 +7,13 @@ function Info({ data }) {
     <li>
       <p>{data.company}</p>
       <p>{data.jobTitle}</p>
-      <p>{data.description}</p>
-      <p>{formatDateToString(data.startDate)}</p>
-      <p>{formatDateToString(data.endDate)}</p>
+      <p className="jobDescription">{data.description}</p>
+      <p>
+        {formatDateToString(data.startDate) && "Desde"}
+        <span> {formatDateToString(data.startDate)} </span>
+        {formatDateToString(data.endDate) && "hasta"}
+        <span> {formatDateToString(data.endDate)}</span>
+      </p>
     </li>
   );
 }

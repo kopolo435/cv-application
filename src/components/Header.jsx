@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <p>CvAplication</p>
+      <h1>CvAplication</h1>
     </header>
   );
 }

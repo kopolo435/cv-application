@@ -32,7 +32,7 @@ function validateDate(
   }
 }
 
-function DateInput({ name, index, dateValue, onInput, errorValue }) {
+function DateInput({ name, label, index, dateValue, onInput, errorValue }) {
   const dateString = formatDateToString(dateValue);
 
   function setDateObj(dateString) {
@@ -44,7 +44,7 @@ function DateInput({ name, index, dateValue, onInput, errorValue }) {
   return (
     <div className="dateInput">
       <label>
-        {name}
+        {label}
         <input
           type="date"
           value={dateString}
@@ -59,11 +59,11 @@ function DateInput({ name, index, dateValue, onInput, errorValue }) {
   );
 }
 
-function DateInfo({ name, dateValue }) {
+function DateInfo({ name, label, dateValue }) {
   const dateString = formatDateToString(dateValue);
   return (
     <div className="dateInfo">
-      <p>{name}</p>
+      <p>{label}</p>
       <p>{dateString}</p>
     </div>
   );
@@ -72,6 +72,7 @@ function DateInfo({ name, dateValue }) {
 function DateField({
   status,
   name,
+  label,
   index,
   dataObj,
   dataMap,
@@ -136,13 +137,14 @@ function DateField({
   return status === "edit" ? (
     <DateInput
       name={name}
+      label={label}
       index={index}
       dateValue={dateValue}
       onInput={updateInputValue}
       errorValue={errorValue}
     ></DateInput>
   ) : (
-    <DateInfo name={name} dateValue={dateValue}></DateInfo>
+    <DateInfo name={name} label={label} dateValue={dateValue}></DateInfo>
   );
 }
 

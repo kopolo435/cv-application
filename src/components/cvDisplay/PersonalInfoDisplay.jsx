@@ -11,7 +11,7 @@ function PersonalInfoDisplay({ data }) {
       {person.celular !== "" ? (
         <p>{person.celular}</p>
       ) : (
-        <p>Ingrese el numero de telefono</p>
+        <p>Ingrese un telefono</p>
       )}
     </>
   );
