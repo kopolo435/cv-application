@@ -30,6 +30,8 @@ form {
 fieldset {
   border: solid var(--main100);
   padding: 5px;
+  width: 80vw;
+  max-width: 300px;
 
   legend {
     float: left;
@@ -113,6 +115,7 @@ input {
   }
   textarea {
     max-width: 35em;
+    width: 100%;
     resize: none;
   }
 }
@@ -162,7 +165,7 @@ input {
   }
 
   form {
-    height: 80vh;
+    height: 75vh;
     overflow: scroll;
     overflow-x: hidden;
   }

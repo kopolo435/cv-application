@@ -16,7 +16,7 @@
 
 .editDisplay {
   display: flex;
-  padding: 20px;
+  padding: 10px 20px;
   gap: 30px;
   justify-content: center;
   background-color: var(--main50);
@@ -24,11 +24,28 @@
 
 .submittDisplay {
   display: flex;
-  padding: 20px;
+  padding: 10px 20px;
   gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
   background-color: var(--main50);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background: var(--main500);
+  padding: 10px;
+  color: var(--main50);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--main500);
+  padding: 10px;
+  color: var(--main50);
 }
 
 * {
@@ -61,6 +78,8 @@ form {
 fieldset {
   border: solid var(--main100);
   padding: 5px;
+  width: 80vw;
+  max-width: 300px;
 }
 fieldset legend {
   float: left;
@@ -138,6 +157,7 @@ input {
 }
 .textAreaInput textarea {
   max-width: 35em;
+  width: 100%;
   resize: none;
 }
 
@@ -187,7 +207,7 @@ input {
     width: 300px;
   }
   form {
-    height: 80vh;
+    height: 75vh;
     overflow: scroll;
     overflow-x: hidden;
   }
