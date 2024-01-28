@@ -9,12 +9,14 @@ function Info({ data }) {
 function SkillInfoDisplay({ data, type }) {
   const skillArray = Array.from(data, ([name, value]) => value);
 
-  return skillArray > 0 ? (
+  return skillArray.length > 0 ? (
     <div className="habilidades">
       <p>Habilidades</p>
-      {skillArray.map((value) => (
-        <Info key={value.id} data={value}></Info>
-      ))}
+      <ul>
+        {skillArray.map((value) => (
+          <Info key={value.id} data={value}></Info>
+        ))}
+      </ul>
     </div>
   ) : (
     type === "preview" && (
