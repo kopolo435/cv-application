@@ -55,6 +55,14 @@ header {
   }
 }
 
+.primaryBtn {
+  padding: 2px 10px;
+  background: var(--main500);
+  color: var(--main50);
+  border-radius: 10px;
+  border: none;
+}
+
 footer {
   display: flex;
   justify-content: center;

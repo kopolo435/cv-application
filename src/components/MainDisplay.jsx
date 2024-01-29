@@ -65,6 +65,7 @@ function MainDisplay() {
         <div className="optionContainer">
           <Button
             type={"button"}
+            btnClass={"primaryBtn"}
             content={"Editar"}
             handleClick={() => setStatus("edit")}
           ></Button>
